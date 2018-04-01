@@ -9,23 +9,7 @@ $(document).ready(function() {
     });
 
     $("#create-button").click(function() {
-        if ($(".circle").hasClass("selected")) {
-            notes += 1;
-
-            var color = $(".selected").css("background-color");
-            var userNote = $("#note-text").val();
-            $("#note-text").val("");
-
-            var noteId = "note" + notes;
-            $(".notes-container").append("<div id='" + noteId + "' "
-                + "draggable='true' ondragstart='drag_start(event)' class='note' style='padding: 10px; background:"
-                + color + "'> " + userNote + " </div>");
-
-            var dm = document.getElementById(noteId);
-            dm.addEventListener('dragstart',drag_start,false);
-            document.body.addEventListener('dragover',drag_over,false);
-            document.body.addEventListener('drop',drop,false);
-        }
+        addNote();
     });
 
     var zoom = 1.0;
@@ -51,10 +35,12 @@ function drag_start(event) {
     (parseInt(style.getPropertyValue("left"),10) - event.clientX) + ','
     + (parseInt(style.getPropertyValue("top"),10) - event.clientY) + ',' + event.target.id);
 }
+
 function drag_over(event) {
     event.preventDefault();
     return false;
 }
+
 function drop(event) {
     var offset = event.dataTransfer.getData("text/plain").split(',');
     $("#" + offset[2]).css({position: 'absolute'});
@@ -65,4 +51,30 @@ function drop(event) {
     event.preventDefault();
     notes -= 1;
     return false;
+}
+
+function clickPress(event) {
+    if (event.keyCode == 13) {
+        addNote();
+    }
+}
+
+function addNote() {
+    if ($(".circle").hasClass("selected")) {
+        notes += 1;
+
+        var color = $(".selected").css("background-color");
+        var userNote = $("#note-text").val();
+        $("#note-text").val("");
+
+        var noteId = "note" + notes;
+        $(".notes-container").append("<div id='" + noteId + "' "
+            + "draggable='true' ondragstart='drag_start(event)' class='note' style='padding: 10px; background:"
+            + color + "'> " + userNote + " </div>");
+
+        var dm = document.getElementById(noteId);
+        dm.addEventListener('dragstart',drag_start,false);
+        document.body.addEventListener('dragover',drag_over,false);
+        document.body.addEventListener('drop',drop,false);
+    }
 }
