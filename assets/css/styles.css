@@ -261,8 +261,8 @@ body {
     width: 160px;
     position: fixed;
     z-index: 999999;
-    margin-left: 0%;
-    margin-top: 44.5%;
+    bottom: 0%;
+    left: 0%;
     background: #A5DAFF;
     display: flex;
     flex-direction: row;
@@ -289,8 +289,8 @@ body {
     width: 40px;
     position: fixed;
     z-index: 100000;
-    margin-left: 67%;
-    margin-top: 22%;
+    right: 30%;
+    top: 50%;
     background: #A5DAFF;
     display: flex;
     flex-direction: column;
