@@ -117,6 +117,26 @@ body {
     justify-content: space-around;
 }
 
+@media screen and (min-height: 300px) {
+    .notes-container {
+        height: 300px;
+        overflow-y: scroll;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}
+
+@media screen and (min-height: 700px) {
+    .notes-container {
+        height: 450px;
+        overflow-y: scroll;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}
+
 .note {
     width: 150px;
     height: 150px;
