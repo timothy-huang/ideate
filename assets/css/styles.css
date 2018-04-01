@@ -86,6 +86,8 @@ body {
     position: relative;
     width: 2000px;
     height: 1000px;
+    width: 4000px;
+    height: 3800px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -236,6 +238,7 @@ body {
     outline: none;
 }
 
+<<<<<<< HEAD
 .optionbar {
     position: fixed;
     width: 80px;
@@ -270,3 +273,41 @@ body {
 .optionbar-line {
     float: left;
 }
+=======
+.zoom-buttons {
+    height: 80px;
+    width: 40px;
+    position: fixed;
+    z-index: 100000;
+    margin-left: 67%;
+    margin-top: 22%;
+    background: #A5DAFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.zoom-in {
+    padding: 2px;
+    height: 25px;
+    width: 25px;
+    margin-bottom: 10px;
+}
+
+.zoom-in:hover {
+    opacity: .5;
+    cursor: pointer;
+}
+
+.zoom-out {
+    padding: 2px;
+    height: 25px;
+    width: 25px;
+}
+
+.zoom-out:hover {
+    opacity: .5;
+    cursor: pointer;
+}
+>>>>>>> 4a9821af63ac7a542b46f386b7e0a96b92eb65a0
