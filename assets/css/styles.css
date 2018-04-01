@@ -243,7 +243,6 @@ body {
     z-index: 999999;
     left: 0%;
     top: 45px;
-    background: white;
     display: flex;
     flex-direction: row;
     justify-content: center;
