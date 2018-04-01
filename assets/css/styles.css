@@ -121,7 +121,7 @@ body {
 
 @media screen and (min-height: 300px) {
     .notes-container {
-        height: 300px;
+        height: 270px;
     }
 }
 
