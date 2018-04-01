@@ -75,9 +75,16 @@ body {
         "whiteboard create";
 }
 
+.wrapper {
+    overflow: auto;
+}
+
 .whiteboard-container {
     background: white;
     grid-area: whiteboard;
+    position: relative;
+    width: 2000px;
+    height: 1000px;
     display: flex;
     flex-wrap: wrap;
 }
