@@ -112,7 +112,7 @@ body {
 .notes-container {
     height: 400px;
     width: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
