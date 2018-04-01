@@ -237,38 +237,31 @@ body {
 }
 
 .optionbar {
+    height: 40px;
+    width: 160px;
     position: fixed;
-    width: 80px;
-    height: 20px;
+    z-index: 999999;
     margin-left: 0%;
-    margin-top: 100%;
-    color: white;
-    font-family: Arial;
-    background: #3299CC;
+    margin-top: 38.5%;
+    background: #A5DAFF;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    z-index: 999;
-
 
 }
 
-.optionbar-text {
-    float: left;
+.optionicon {
+    padding: 1px;
+    height: 25px;
+    width: 25px;
+    margin-right: 5.5px;
+    margin-left: 5.5px;
 }
 
-.optionbar-circle {
-    float: left;
-}
-
-.optionbar-square {
-    float: left;
-}
-
-.optionbar-line {
-    float: left;
+.optionicon:hover {
+    opacity: .5;
+    cursor: pointer;
 }
 
 .zoom-buttons {
