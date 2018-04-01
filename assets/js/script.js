@@ -1,7 +1,7 @@
+
+var notes = 0;
+
 $(document).ready(function() {
-
-    var notes = 0;
-
     /**
     var canvas1 = document.getElementById("notes-canvas");
     var notesContainer = $(".notes-container");
@@ -28,46 +28,38 @@ $(document).ready(function() {
             var userNote = $("#note-text").val();
             $("#note-text").val("");
 
-            $(".notes-container").append("<div id='" + "drag" + notes + "' "
-                + "draggable='true' ondragstart='drag(event)' class='note' style='padding: 10px; background:"
+            var noteId = "note" + notes;
+            $(".notes-container").append("<div id='" + noteId + "' "
+                + "draggable='true' ondragstart='drag_start(event)' class='note' style='padding: 10px; background:"
                 + color + "'> " + userNote + " </div>");
+
+            var dm = document.getElementById(noteId);
+            dm.addEventListener('dragstart',drag_start,false);
+            document.body.addEventListener('dragover',drag_over,false);
+            document.body.addEventListener('drop',drop,false);
         }
     });
 
-    /**
-    function wrapText(context, text, x, y, maxWidth, lineHeight) {
-        var words = text.split(' ');
-        var line = '';
-
-        for (var n = 0; n < words.length; n++) {
-          var testLine = line + words[n] + ' ';
-          var metrics = context.measureText(testLine);
-          var testWidth = metrics.width;
-          if (testWidth > maxWidth && n > 0) {
-            c1.fillText(line, x, y);
-            line = words[n] + ' ';
-            y += lineHeight;
-          }
-          else {
-            line = testLine;
-          }
-        }
-        context.fillText(line, x, y);
-    }
-    */
 });
 
-function allowDrop(ev) {
-    ev.preventDefault();
+function drag_start(event) {
+    var style = window.getComputedStyle(event.target, null);
+    event.dataTransfer.setData("text/plain",
+    (parseInt(style.getPropertyValue("left"),10) - event.clientX) + ','
+    + (parseInt(style.getPropertyValue("top"),10) - event.clientY) + ',' + event.target.id);
 }
-
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
+function drag_over(event) {
+    event.preventDefault();
+    return false;
 }
-
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    console.log(data);
-    ev.target.appendChild(document.getElementById(data));
+function drop(event) {
+    var offset = event.dataTransfer.getData("text/plain").split(',');
+    $("#" + offset[2]).css({position: 'absolute'});
+    event.target.appendChild(document.getElementById(offset[2]));
+    var dm = document.getElementById(offset[2]);
+    dm.style.left = (event.clientX + parseInt(offset[0],10)) + 'px';
+    dm.style.top = (event.clientY + parseInt(offset[1],10)) + 'px';
+    event.preventDefault();
+    notes -= 1;
+    return false;
 }
