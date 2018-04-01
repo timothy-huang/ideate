@@ -1,6 +1,8 @@
 $(document).ready(function() {
 
     var notes = 0;
+
+    /**
     var canvas1 = document.getElementById("notes-canvas");
     var notesContainer = $(".notes-container");
     canvas1.width = notesContainer.innerWidth();
@@ -11,6 +13,7 @@ $(document).ready(function() {
     var y = 20;
     var rectWidth = 150;
     var rectHeight = 150;
+    */
 
     $(".circle").click(function() {
         $(".circle").removeClass("selected");
@@ -22,26 +25,16 @@ $(document).ready(function() {
             notes += 1;
 
             var color = $(".selected").css("background-color");
-            c1.fillStyle = "" + color;
-            c1.fillRect(x, y, rectWidth, rectHeight);
-
             var userNote = $("#note-text").val();
             $("#note-text").val("");
-            var userNoteX = x + 5;
-            var userNoteY = y + 20;
-            c1.fillStyle = "#000000";
-            c1.font = '16px sans-serif';
-            wrapText(c1, userNote, userNoteX, userNoteY, 150, 18);
 
-            if (notes % 2 == 0) {
-                x = 40;
-                y += 170;
-            } else {
-                x += 170;
-            }
+            $(".notes-container").append("<div id='" + "drag" + notes + "' "
+                + "draggable='true' ondragstart='drag(event)' class='note' style='padding: 10px; background:"
+                + color + "'> " + userNote + " </div>");
         }
     });
 
+    /**
     function wrapText(context, text, x, y, maxWidth, lineHeight) {
         var words = text.split(' ');
         var line = '';
@@ -61,4 +54,20 @@ $(document).ready(function() {
         }
         context.fillText(line, x, y);
     }
+    */
 });
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    console.log(data);
+    ev.target.appendChild(document.getElementById(data));
+}
