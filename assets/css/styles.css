@@ -236,6 +236,26 @@ body {
     outline: none;
 }
 
+.numpeople {
+    height: 40px;
+    width: 40px;
+    position: fixed;
+    z-index: 999999;
+    margin-left: 0%;
+    margin-top: 30%;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.numpeopleicon {
+    padding: 1px;
+    height: 25px;
+    width: 25px;
+}
+
 .optionbar {
     height: 40px;
     width: 160px;
