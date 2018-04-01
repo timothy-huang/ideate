@@ -5,6 +5,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <meta charset="utf-8">
     <title>Ideate: Whiteboard</title>
 </head>
 
@@ -34,24 +35,31 @@
             <div class="idea-container"> <!-- ideas container -->
                 <div id="idea-scrollbar"> <!-- custom scrollbar -->
                 </div>
-                <div id="title">My Ideas</div> <!-- title -->
+                <div id="title"><b>My Ideas</b></div> <!-- title -->
                 <div></div> <!-- line -->
-                <div></div> <!-- sticky notes container -->
+                <div class="notes-container">
+                    <canvas id="notes-canvas"></canvas> <!-- sticky notes canvas -->
+                </div>
+
             </div>
 
             <div class="create-container"> <!-- idea creating container here -->
-                <div> <!-- color palette -->
-                    <div></div> <!-- circle 1 -->
-                    <div></div> <!-- circle 2 -->
-                    <div></div> <!-- circle 3 -->
-                    <div></div> <!-- circle 4 -->
+                <div id="color-palette"> <!-- color palette -->
+                    <div class="circle orange"></div> <!-- circle 1 -->
+                    <div class="circle pink"></div> <!-- circle 2 -->
+                    <div class="circle blue"></div> <!-- circle 3 -->
+                    <div class="circle green"></div> <!-- circle 4 -->
                 </div>
-                <div> <!-- Create new idea button -->
+                <div><input type="text" id="note-text" placeholder="Jot your note here!"></div>
+                <div id="create-button"> <!-- Create new idea button -->
                     Create Idea
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="assets/js/script.js"></script>
 </body>
 
 </html>
