@@ -84,8 +84,8 @@ body {
     background: white;
     grid-area: whiteboard;
     position: relative;
-    width: 2000px;
-    height: 2000px;
+    width: 4000px;
+    height: 3800px;
     display: flex;
     flex-wrap: wrap;
 }

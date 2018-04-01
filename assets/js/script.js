@@ -42,14 +42,15 @@ $(document).ready(function() {
 
     var zoom = 1.0;
 
-    $('.zoom-out').click(function(){
-        if (zoom < 2.0) {
+    $('.zoom-out').click(function() {
+        if (zoom > 0.25) {
             zoom = zoom / 2;
         }
         $(".whiteboard-container").animate({ 'zoom': zoom}, 400); //animation speed 400=0.4s !
     });
-    $('.zoom-in').click(function(){
-        if (zoom > 0.25) {
+
+    $('.zoom-in').click(function() {
+        if (zoom < 2) {
             zoom = zoom * 2;
         }
         $(".whiteboard-container").animate({ 'zoom': zoom}, 400); //animation speed 400=0.4s !
