@@ -86,7 +86,7 @@ body {
     background: #E2EFF9;
     grid-area: create;
     display: grid;
-    grid-template-rows: 80% 20%;
+    grid-template-rows: 75% 25%;
     grid-template-areas:
         "ideas"
         "create-container";
