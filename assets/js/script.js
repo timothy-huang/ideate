@@ -2,18 +2,6 @@
 var notes = 0;
 
 $(document).ready(function() {
-    /**
-    var canvas1 = document.getElementById("notes-canvas");
-    var notesContainer = $(".notes-container");
-    canvas1.width = notesContainer.innerWidth();
-    canvas1.height = 1000;
-    var c1 = canvas1.getContext('2d');
-
-    var x = 40;
-    var y = 20;
-    var rectWidth = 150;
-    var rectHeight = 150;
-    */
 
     $(".circle").click(function() {
         $(".circle").removeClass("selected");
