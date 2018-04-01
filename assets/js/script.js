@@ -73,8 +73,8 @@ function addNote() {
             + color + "'> " + userNote + " </div>");
 
         var dm = document.getElementById(noteId);
-        dm.addEventListener('dragstart',drag_start,false);
-        document.body.addEventListener('dragover',drag_over,false);
-        document.body.addEventListener('drop',drop,false);
+        dm.addEventListener('dragstart', drag_start , false);
+        $("whiteboard-container").addEventListener('dragover' , drag_over, false);
+        $("whiteboard-container").addEventListener('drop', drop, false);
     }
 }
