@@ -145,6 +145,10 @@ body {
     margin: 5px 5px 5px 5px;
 }
 
+.not:hover {
+    cursor: pointer;
+}
+
 #title {
     text-align: center;
     width: 100%;

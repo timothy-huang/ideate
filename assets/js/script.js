@@ -1,5 +1,6 @@
 
 var notes = 0;
+var zoom = 1.0;
 
 $(document).ready(function() {
 
@@ -13,8 +14,6 @@ $(document).ready(function() {
     $("#create-button").click(function() {
         addNote();
     });
-
-    var zoom = 1.0;
 
     $('.zoom-out').click(function() {
         if (zoom > 0.25) {
